@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:ishare/ui/screens/detailscreen.dart';
 import 'package:ishare/ui/screens/filterscreen.dart';
 import 'package:ishare/ui/screens/widgets/customrouter.dart';
 import 'package:ishare/ui/screens/widgets/distancebutton.dart';
@@ -183,12 +184,77 @@ class _HomeScreenState extends State<HomeScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              ListView.builder(
+              ListView(
                 shrinkWrap: true,
                 physics: ScrollPhysics(),
-                itemCount: 2,
-                itemBuilder: (context, index) {
-                  return Stack(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      CustomRouter().push(DetailScreen(), context);
+                    },
+                    child: Stack(
+                      children: [
+                        Container(
+                          height: height * 0.45,
+                          child: Card(
+                            elevation: 10,
+                            child: Column(
+                              children: [
+                                Image.asset(
+                                  'assets/images/charity2.png',
+                                  fit: BoxFit.fill,
+                                  height: height * 0.3,
+                                ),
+                                SizedBox(
+                                  height: height * 0.01,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: width * 0.05),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'Karachi Charity ',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: width * 0.04),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: height * 0.01,
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: width * 0.05),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'Islamabad, Punjab, Pakistan',
+                                        style:
+                                            TextStyle(fontSize: width * 0.03),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                          ),
+                        ),
+                        Positioned(
+                          top: height * 0.02,
+                          right: width * 0.04,
+                          child: IconButton(
+                              iconSize: width * 0.08,
+                              onPressed: () {},
+                              icon: Icon(Icons.favorite_border)),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Stack(
                     children: [
                       Container(
                         height: height * 0.45,
@@ -247,8 +313,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             icon: Icon(Icons.favorite_border)),
                       ),
                     ],
-                  );
-                },
+                  )
+                ],
               )
             ],
           ),

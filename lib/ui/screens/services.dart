@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ishare/ui/screens/bookings.dart';
+import 'package:ishare/ui/screens/widgets/customrouter.dart';
 
 class Services extends StatefulWidget {
   const Services({Key? key}) : super(key: key);
@@ -24,26 +26,90 @@ class _ServicesState extends State<Services> {
       ),
       body: Column(
         children: [
-          Center(
-            child: Container(
-              width: width / 2,
-              child: Card(
-                elevation: 5,
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Column(
-                    children: [
-                      Text(
-                        'Volunteering Services',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: width * 0.045),
-                      ),
-                      Icon(
-                        Icons.volunteer_activism_rounded,
-                        size: width * 0.1,
-                      )
-                    ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: width,
+              height: height * 0.1,
+              child: ElevatedButton(
+                onPressed: () {
+                  CustomRouter().push(Booking(), context);
+                },
+                child: Text(
+                  'Volunteering Services',
+                  style: TextStyle(
+                    fontSize: width * 0.050,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: width,
+              height: height * 0.1,
+              child: ElevatedButton(
+                onPressed: () {
+                  CustomRouter().push(Booking(), context);
+                },
+                child: Text(
+                  'Funding Services',
+                  style: TextStyle(
+                    fontSize: width * 0.050,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: width,
+              height: height * 0.1,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'Your Services',
+                  style: TextStyle(
+                    fontSize: width * 0.050,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: width,
+              height: height * 0.1,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'Register For Help',
+                  style: TextStyle(
+                    fontSize: width * 0.050,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SizedBox(
+              width: width,
+              height: height * 0.1,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  'Rate Services',
+                  style: TextStyle(
+                    fontSize: width * 0.050,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),

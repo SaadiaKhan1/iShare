@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ishare/ui/screens/bookings.dart';
 import 'package:ishare/ui/screens/chatscreen.dart';
+import 'package:ishare/ui/screens/contactus.dart';
 import 'package:ishare/ui/screens/home.dart';
 import 'package:ishare/ui/screens/services.dart';
 
@@ -18,7 +19,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     Services(),
     Booking(),
     ChatScreen(),
-    Container(),
+    ContactUs(),
   ];
 
   void _onItemTapped(int index) {

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:ishare/ui/screens/login.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -18,9 +19,9 @@ class SplashScreenState extends State<SplashScreen>
   }
 
   void navigationPage() {
-    // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) {
-    //   return BarberApp();
-    // }), (route) => false);
+    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) {
+      return Login();
+    }), (route) => false);
   }
 
   @override
@@ -53,9 +54,9 @@ class SplashScreenState extends State<SplashScreen>
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               new Image.asset(
-                'assets/logo_main.png',
-                width: animation.value * 300,
-                height: animation.value * 300,
+                'assets/images/splash.png',
+                width: animation.value * 400,
+                height: animation.value * 400,
               ),
             ],
           ),
